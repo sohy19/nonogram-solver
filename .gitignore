@@ -358,4 +358,4 @@ venv.bak/\cf5 \cb1 \
 *.code-workspace\
 \
 # End of https://www.toptal.com/developers/gitignore/api/django,venv,python,visualstudiocode,macos\
-}
+}.DS_Store
