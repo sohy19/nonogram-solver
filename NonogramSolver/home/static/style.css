@@ -1,0 +1,14 @@
+table {
+    margin: 0 auto;
+    min-width: 30vw; min-height: 40vh;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    border: 1px solid #000;
+    width: 50px;
+    background-color: white;
+}

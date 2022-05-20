@@ -2,14 +2,42 @@
 {% block content %}
 {% load static %}
 
-힌트 입력 칸
+<link rel="stylesheet" href="../static/style.css">
+<!-- 힌트 입력 칸
 결과 나오는 칸
-연산 횟수
+연산 횟수 -->
 
-
-<p id="size">{{ row }} X {{ col }}</p>
-
-
-
+<!DOCTYPE html>
+<html>
+    <p id="size">
+        <span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
+    </p>
+    <div>
+        <form>
+            <script>
+                const row = document.getElementById('row').innerText;
+                const col = document.getElementById('col').innerText;
+                for (let i = 0; i < row; i++){
+                    document.createElement('input');
+                }
+            </script>
+        </form>
+    </div>
+    <div id="table">
+        <script>
+            document.write('<table border="1"');
+            for (let i = 0; i < row; i++){
+                document.write('<tr>');
+                for (let j=0; j < col; j++){
+                    document.write('<td>');
+                    document.write('');
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        </script>
+    </div>
+</html>
 
 {% endblock %}
