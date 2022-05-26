@@ -1,3 +1,8 @@
+#size {
+    margin: 0 auto;
+    color: white;
+}
+
 table {
     margin: 0 auto;
     min-width: 30vw; min-height: 40vh;
@@ -11,4 +16,8 @@ td {
     border: 1px solid #000;
     width: 50px;
     background-color: white;
+}
+
+.col-hint {
+    flex-direction: column;
 }

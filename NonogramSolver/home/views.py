@@ -5,7 +5,10 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def result(request):
+def next(request):
     row = request.GET['row']
     col = request.GET['col']
-    return render(request, 'result.html', {'row': row, 'col': col})
+    return render(request, 'next.html', {'row': row, 'col': col})
+
+def result(request):
+    return render(request, 'result.html')
