@@ -9,7 +9,28 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    
+    <p id="size">
+        <span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
+    </p>
+    <div id="table">
+        <script>   // 퍼즐 grid
+            const row = document.getElementById('row').innerText;
+            const col = document.getElementById('col').innerText;
+            document.write('<table border="1"');
+            for (let i = 0; i < row; i++){
+                document.write('<tr>');
+                for (let j=0; j < col; j++){
+                    document.write('<td>');
+                    document.write('');
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        </script>
+    </div>
+    {{ row_hints }}
+    {{ col_hints }}
 </body>
 </html>
 

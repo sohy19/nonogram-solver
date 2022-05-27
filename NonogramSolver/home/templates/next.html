@@ -11,7 +11,7 @@
     <p id="size">
         <span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
     </p>
-    <div id="table">
+    <div>
         <script>   // 퍼즐 grid
             const row = document.getElementById('row').innerText;
             const col = document.getElementById('col').innerText;
@@ -31,7 +31,7 @@
     <div id="hints">
     </div>
         <div>
-        <form action="{% url 'result' %}" method="POST">
+        <form action="{% url 'result' row col %}" method="POST">
             {%csrf_token%}
             <script>
                 const hints = document.getElementById("hints");
@@ -39,14 +39,14 @@
                     var input = document.createElement("input");
                     input.type = "text";
                     input.className = "row-hint";
-                    input.id = "row-hint" + i
+                    input.name = "row-hint" + i
                     hints.appendChild(input)
                 }
                 for (let i = 1; i <= col; i++){   // 열 힌트 입력란
                     var input = document.createElement("input");
                     input.type = "text";
                     input.className = "col-hint";
-                    input.id = "col-hint" + i
+                    input.name = "col-hint" + i
                     hints.appendChild(input)
                 }
                 // input 태그 여러 개 나와야 하고, input 태그 값 전체 전달 돼야 함
