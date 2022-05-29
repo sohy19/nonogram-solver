@@ -1,59 +1,66 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
-<link rel="stylesheet" href="../static/style.css">
+<link rel="stylesheet" href="../static/style.css" />
 <!-- 힌트 입력 칸
 결과 나오는 칸
 연산 횟수 -->
 <!DOCTYPE html>
 <html>
-    <p id="size">
-        <span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
-    </p>
-    <div>
-        <script>   // 퍼즐 grid
-            const row = document.getElementById('row').innerText;
-            const col = document.getElementById('col').innerText;
-            document.write('<table border="1"');
-            for (let i = 0; i < row; i++){
-                document.write('<tr>');
-                for (let j=0; j < col; j++){
-                    document.write('<td>');
-                    document.write('');
-                    document.write('</td>');
-                }
-                document.write('</tr>');
-            }
-            document.write('</table>');
-        </script>
-    </div>
-    <div id="hints">
-    </div>
-        <div>
-        <form action="{% url 'result' row col %}" method="POST">
-            {%csrf_token%}
-            <script>
-                const hints = document.getElementById("hints");
-                for (let i = 1; i <= row; i++){   // 행 힌트 입력란
-                    var input = document.createElement("input");
-                    input.type = "text";
-                    input.className = "row-hint";
-                    input.name = "row-hint" + i
-                    hints.appendChild(input)
-                }
-                for (let i = 1; i <= col; i++){   // 열 힌트 입력란
-                    var input = document.createElement("input");
-                    input.type = "text";
-                    input.className = "col-hint";
-                    input.name = "col-hint" + i
-                    hints.appendChild(input)
-                }
-                // input 태그 여러 개 나와야 하고, input 태그 값 전체 전달 돼야 함
-            </script>
-            <button type="submit" name="solve-btn" class="btn btn-primary">SOLVE</button>
-        </form>
-    </div>
+	<p id="size">
+		<span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
+	</p>
+
+	<div>
+		<form class="gridForm" action="{% url 'result' row col %}" method="POST">
+			<div id="col-hints"></div>
+			<div id="row-hints"></div>
+
+			<div class="myGrid">
+				<script>
+					// 퍼즐 grid
+					const row = document.getElementById("row").innerText;
+					const col = document.getElementById("col").innerText;
+					document.write('<table border="1" class="table" ');
+					for (let i = 0; i < row; i++) {
+						document.write("<tr>");
+						for (let j = 0; j < col; j++) {
+							document.write("<td>");
+							document.write("");
+							document.write("</td>");
+						}
+						document.write("</tr>");
+					}
+					document.write("</table>");
+				</script>
+			</div>
+
+			{%csrf_token%}
+			<script>
+				const row_hints = document.getElementById("row-hints");
+				const col_hints = document.getElementById("col-hints");
+				for (let i = 1; i <= row; i++) {
+					// 행 힌트 입력란
+					const input = document.createElement("input");
+					input.type = "text";
+					input.className = "row-hint";
+					input.name = `row-hint${i}`;
+					row_hints.appendChild(input);
+				}
+				for (let i = 1; i <= col; i++) {
+					// 열 힌트 입력란
+					const input = document.createElement("input");
+					input.type = "text";
+					input.className = "col-hint";
+					input.name = "col-hint" + i;
+					col_hints.appendChild(input);
+				}
+				// input 태그 여러 개 나와야 하고, input 태그 값 전체 전달 돼야 함
+			</script>
+			<button type="submit" name="solve-btn" class="btn btn-primary">
+				SOLVE
+			</button>
+		</form>
+	</div>
 </html>
 
 {% endblock %}

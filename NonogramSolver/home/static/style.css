@@ -1,23 +1,50 @@
 #size {
-    margin: 0 auto;
-    color: white;
+	margin: 0 auto;
+	color: white;
+	grid-area: header;
 }
 
-table {
-    margin: 0 auto;
-    min-width: 30vw; min-height: 40vh;
+.gridForm {
+	display: grid;
+	grid-template-areas:
+		". col ."
+		"row grid ."
+		". . button";
 }
 
-tr {
-    height: 50px;
-}
-
-td {
-    border: 1px solid #000;
-    width: 50px;
-    background-color: white;
+#row-hints {
+	display: flex;
+	flex-direction: column;
+	margin-right: 0;
+	width: 100px;
+	grid-area: row;
 }
 
 .col-hint {
-    flex-direction: column;
+	width: 100px;
+	grid-area: col;
+}
+
+.myGrid {
+	grid-area: grid;
+}
+
+table {
+	margin: 0 auto;
+	min-width: 30vw;
+	min-height: 40vh;
+}
+
+tr {
+	height: 50px;
+}
+
+td {
+	border: 1px solid #000;
+	width: 50px;
+	background-color: white;
+}
+
+.btn {
+	grid-area: button;
 }
