@@ -1,4 +1,6 @@
+from ast import Num
 from django.shortcuts import render
+# import json
 
 # Create your views here.
 
@@ -19,5 +21,7 @@ def result(request, row, col):
     for i in range(1, col+1):
         idx = "col-hint" + str(i)
         col_hints.append(request.POST.get(idx))
-    print(row_hints)
-    return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints})
+    num = 284   # 연산 횟수
+    answer = [[False, False, False, True, True], [True, True, False, True, True], [True, True, True, False, False], [False, True, True, False, False]]
+    # j_answer = json.dumps(answer)
+    return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints, 'num': num, 'answer': answer})

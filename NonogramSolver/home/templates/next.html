@@ -9,17 +9,16 @@
 	<p id="size">
 		<span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
 	</p>
-
 	<div>
 		<form class="gridForm" action="{% url 'result' row col %}" method="POST">
+      {%csrf_token%}
 			<div id="col-hints"></div>
 			<div id="row-hints"></div>
-
 			<div class="myGrid">
 				<script>
 					// 퍼즐 grid
-					const row = document.getElementById("row").innerText;
-					const col = document.getElementById("col").innerText;
+					const row = "{{ row }}";
+					const col = "{{ col }}";
 					document.write('<table border="1" class="table" ');
 					for (let i = 0; i < row; i++) {
 						document.write("<tr>");
@@ -33,8 +32,6 @@
 					document.write("</table>");
 				</script>
 			</div>
-
-			{%csrf_token%}
 			<script>
 				const row_hints = document.getElementById("row-hints");
 				const col_hints = document.getElementById("col-hints");

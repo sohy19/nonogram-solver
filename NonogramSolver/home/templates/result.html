@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
+<link rel="stylesheet" href="../static/style.css" />
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,25 +10,51 @@
 		<p id="size">
 			<span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
 		</p>
+        <div id="col-hints">
+            {% for hint in col_hints %}
+                {{ hint }} &nbsp;
+            {% endfor %}
+        </div>
+		<div id="row-hints">
+            {% for hint in row_hints %}
+            <p>{{ hint }}</p>
+            {% endfor %}
+        </div>
 		<div id="table">
-			<script>
-				// 퍼즐 grid
-				const row = document.getElementById("row").innerText;
-				const col = document.getElementById("col").innerText;
-				document.write('<table border="1"');
-				for (let i = 0; i < row; i++) {
-					document.write("<tr>");
-					for (let j = 0; j < col; j++) {
-						document.write("<td>");
-						document.write("");
-						document.write("</td>");
-					}
-					document.write("</tr>");
-				}
-				document.write("</table>");
-			</script>
+            <script>
+                // 퍼즐 grid
+                const row = document.getElementById("row").innerText;
+                const col = document.getElementById("col").innerText;
+                document.write('<table border="1" class="table" ');
+                for (let i = 0; i < row; i++) {
+                    document.write("<tr>");
+                    for (let j = 0; j < col; j++) {
+                        idx = i + j
+                        document.write("<td id=idx>");
+                        document.write("");
+                        document.write("</td>");
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            </script>
+            <!-- 
+                for i in range(row):
+                    for j in range(col):
+                        if answer[i][j] == True:
+                            해당 칸 = black
+                        else:
+                            해당 칸 = white
+            -->
 		</div>
-		{{ row_hints }} {{ col_hints }}
+        <p>
+            연산 횟수 : {{ num }}
+        </p>
+        <span id="ans">
+            {% for ans in answer %}
+            <p>{{ ans }}</p>
+            {% endfor %}
+        </span>
 	</body>
 </html>
 
