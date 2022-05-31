@@ -1,6 +1,6 @@
-from ast import Num
 from django.shortcuts import render
-# import json
+from django.contrib import messages
+
 
 # Create your views here.
 
@@ -21,7 +21,11 @@ def result(request, row, col):
     for i in range(1, col+1):
         idx = "col-hint" + str(i)
         col_hints.append(request.POST.get(idx))
-    num = 284   # 연산 횟수
-    answer = [[False, False, False, True, True], [True, True, False, True, True], [True, True, True, False, False], [False, True, True, False, False]]
-    # j_answer = json.dumps(answer)
-    return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints, 'num': num, 'answer': answer})
+
+    if '' not in row_hints and '' not in col_hints:
+        num = 284   # 연산 횟수
+        answer = [[False, False, False, True, True], [True, True, False, True, True], [True, True, True, False, False], [False, True, True, False, False]]
+        return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints, 'num': num, 'answer': answer})
+    else:
+        messages.info(request, '힌트를 채워주세요.')
+        return render(request, 'next.html', {'row': row, 'col': col})

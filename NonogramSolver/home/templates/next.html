@@ -1,9 +1,6 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-<link rel="stylesheet" href="../static/style.css" />
-<!-- 힌트 입력 칸
-결과 나오는 칸
-연산 횟수 -->
+<link rel="stylesheet" href="../static/style2.css" />
 <!DOCTYPE html>
 <html>
 	<p id="size">
@@ -41,6 +38,7 @@
 					input.type = "text";
 					input.className = "row-hint";
 					input.name = `row-hint${i}`;
+					input.style.height = 10;
 					row_hints.appendChild(input);
 				}
 				for (let i = 1; i <= col; i++) {
@@ -51,11 +49,8 @@
 					input.name = "col-hint" + i;
 					col_hints.appendChild(input);
 				}
-				// input 태그 여러 개 나와야 하고, input 태그 값 전체 전달 돼야 함
 			</script>
-			<button type="submit" name="solve-btn" class="btn btn-primary">
-				SOLVE
-			</button>
+			<button type="submit" name="solve-btn" class="btn btn-primary">SOLVE</button>
 		</form>
 	</div>
 </html>

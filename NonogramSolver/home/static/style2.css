@@ -1,0 +1,51 @@
+#size {
+  color: white;
+  font-size: 30pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+table {
+	min-width: 40vw;
+  max-width: 45vw;
+	min-height: 50vh;
+	background-color: white;
+  margin-left: 100px;
+}
+
+tr {
+	height: 50px;
+  width: 50px;
+}
+
+td {
+	border: 1px solid #000;
+	
+}
+
+.row-hint {
+	width: 180px;
+	/* height: 40px; */
+}
+
+.col-hint {
+	width: 43px;
+	height: 180px;
+}
+
+#row-hints {
+	display: flex;
+	flex-direction: column;
+  float: left;
+  clear: both;
+  margin-left: 6%;
+}
+
+#col-hints {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+	float: right;
+}

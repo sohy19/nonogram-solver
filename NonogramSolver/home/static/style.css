@@ -2,26 +2,35 @@
 	margin: 0 auto;
 	color: white;
 	grid-area: header;
+    font-size: 30pt;
+    font-weight: bold;
 }
 
-.gridForm {
+/* .gridForm {
 	display: grid;
 	grid-template-areas:
+        ". header ."
 		". col ."
 		"row grid ."
 		". . button";
-}
+} */
 
 #row-hints {
 	display: flex;
 	flex-direction: column;
 	margin-right: 0;
-	width: 100px;
 	grid-area: row;
 }
 
+.row-hint {
+	width: 200px;
+	height: 40px;
+	/* margin-top: 20px; */
+}
+
 .col-hint {
-	width: 100px;
+	width: 43px;
+	height: 200px;
 	grid-area: col;
 }
 
@@ -31,8 +40,9 @@
 
 table {
 	margin: 0 auto;
-	min-width: 30vw;
-	min-height: 40vh;
+	width: 40vw;
+	height: 40vh;
+	background-color: white;
 }
 
 tr {
@@ -41,8 +51,8 @@ tr {
 
 td {
 	border: 1px solid #000;
-	width: 50px;
-	background-color: white;
+	/* width: 50px; */
+	/* background-color: white; */
 }
 
 .btn {

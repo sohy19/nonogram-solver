@@ -21,40 +21,25 @@
             {% endfor %}
         </div>
 		<div id="table">
-            <script>
-                // 퍼즐 grid
-                const row = document.getElementById("row").innerText;
-                const col = document.getElementById("col").innerText;
-                document.write('<table border="1" class="table" ');
-                for (let i = 0; i < row; i++) {
-                    document.write("<tr>");
-                    for (let j = 0; j < col; j++) {
-                        idx = i + j
-                        document.write("<td id=idx>");
-                        document.write("");
-                        document.write("</td>");
-                    }
-                    document.write("</tr>");
-                }
-                document.write("</table>");
-            </script>
-            <!-- 
-                for i in range(row):
-                    for j in range(col):
-                        if answer[i][j] == True:
-                            해당 칸 = black
-                        else:
-                            해당 칸 = white
-            -->
+            <span id="ans">
+                <table>
+                    {% for ans in answer %} 
+                    <tr>
+                        {% for a in ans %}
+                            {% if a %}
+                                <td style="background-color: white;"></td>
+                            {% else %}
+                                <td style="background-color: black;"></td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </span>
 		</div>
         <p>
             연산 횟수 : {{ num }}
         </p>
-        <span id="ans">
-            {% for ans in answer %}
-            <p>{{ ans }}</p>
-            {% endfor %}
-        </span>
 	</body>
 </html>
 
