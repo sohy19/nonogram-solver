@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-<link rel="stylesheet" href="../static/style.css" />
+<link rel="stylesheet" href="../static/result_style.css" />
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -15,29 +15,31 @@
                 {{ hint }} &nbsp;
             {% endfor %}
         </div>
-		<div id="row-hints">
-            {% for hint in row_hints %}
-            <p>{{ hint }}</p>
-            {% endfor %}
-        </div>
-		<div id="table">
-            <span id="ans">
-                <table>
-                    {% for ans in answer %} 
-                    <tr>
-                        {% for a in ans %}
-                            {% if a %}
-                                <td style="background-color: white;"></td>
-                            {% else %}
-                                <td style="background-color: black;"></td>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
+        <div class="myGrid">
+            <div id="row-hints">
+                {% for hint in row_hints %}
+                <p>{{ hint }}</p>
+                {% endfor %}
+            </div>
+            <table class="table">
+                {% for ans in answer %} 
+                <tr>
+                    {% for a in ans %}
+                        {% if a %}
+                            <td class='myTd' style="background-color: white;"></td>
+                        {% else %}
+                            <td class='myTd' style="background-color: black;"></td>
+                        {% endif %}
                     {% endfor %}
-                </table>
-            </span>
-		</div>
-        <p>
+                </tr>
+                {% endfor %}
+            </table>
+            <script>
+                const table = document.querySelector(".table");
+                table.style.width = `${row * 70}px`;
+            </script>
+        </div>
+        <p id="number">
             연산 횟수 : {{ num }}
         </p>
 	</body>
