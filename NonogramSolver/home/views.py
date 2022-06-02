@@ -15,6 +15,7 @@ def next(request):
 def result(request, row, col):
     row_hints = []
     col_hints = []
+    print(col, row)
     for i in range(1, row+1):
         idx = f"row-hint{i}"
         row_hints.append(request.POST.get(idx))
@@ -24,8 +25,7 @@ def result(request, row, col):
 
     if '' not in row_hints and '' not in col_hints:
         num = 284   # 연산 횟수
-        answer = [[False, False, False, True, True], [True, True, False, True, True], [True, True, True, False, False], [False, True, True, False, False]]
+        answer = [[False, False, False, True, True, True], [True, True, False, True, True, False], [True, True, True, False, False, True], [False, True, True, False, False, False], [False, True, True, False, False, True], [False, True, True, False, False, True]]
         return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints, 'num': num, 'answer': answer})
     else:
         messages.info(request, '힌트를 채워주세요.')
-        return render(request, 'next.html', {'row': row, 'col': col})

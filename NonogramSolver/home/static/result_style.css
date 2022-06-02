@@ -1,45 +1,58 @@
 #size {
-  color: white;
-  font-size: 30pt;
-  font-weight: bold;
-  text-align: center;
+	color: white;
+	font-size: 30pt;
+	font-weight: bold;
+	text-align: center;
 }
 
 .table {
-  float: right;
-  width: 100%;
-  height: 100px;
-  background-color: white;
+	float: right;
+	width: 100%;
+	height: 100px;
+	background-color: white;
 }
 
 tr {
-  width: 100%;
+	width: 100%;
 }
 
 .myTd {
-  height: 70px;
-  border: 1px solid #000;
+	height: 70px;
+	border: 1px solid #000;
 }
 
 .myGrid {
-  display: flex;
-  justify-content: center;
+	display: grid;
+	grid-template-columns: 100px 1fr;
 }
 
 #col-hints {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: 100px 1fr;
+}
+
+.col_box {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
 	color: white;
 	font-size: 15pt;
 	font-weight: bold;
+}
+
+.cols {
+	width: 12px;
+	text-align: center;
 }
 
 #row-hints {
 	color: white;
 	font-size: 15pt;
 	font-weight: bold;
+	margin-right: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 #number {
@@ -50,7 +63,20 @@ tr {
 }
 
 .row-hint {
-  width: 180px;
-  height: 70px;
+	width: 100px;
+	height: 70px;
 }
 
+/*추가*/
+/* .row {
+	--bs-gutter-x: -43rem;
+	--bs-gutter-y: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-top: calc(var(--bs-gutter-y) * -1);
+	margin-left: calc(var(--bs-gutter-x) / -2);
+	margin-right: calc(var(--bs-gutter-x) / -2);
+} */

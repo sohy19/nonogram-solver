@@ -5,43 +5,47 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<style>
+			#row-hints {
+				width: max-content;
+			}
+		</style>
 	</head>
 	<body>
 		<p id="size">
 			<span id="row">{{ row }}</span> X <span id="col">{{ col }}</span>
 		</p>
-        <div id="col-hints">
-            {% for hint in col_hints %}
-                {{ hint }} &nbsp;
-            {% endfor %}
-        </div>
-        <div class="myGrid">
-            <div id="row-hints">
-                {% for hint in row_hints %}
-                <p>{{ hint }}</p>
-                {% endfor %}
-            </div>
-            <table class="table">
-                {% for ans in answer %} 
-                <tr>
-                    {% for a in ans %}
-                        {% if a %}
-                            <td class='myTd' style="background-color: white;"></td>
-                        {% else %}
-                            <td class='myTd' style="background-color: black;"></td>
-                        {% endif %}
-                    {% endfor %}
-                </tr>
-                {% endfor %}
-            </table>
-            <script>
-                const table = document.querySelector(".table");
-                table.style.width = `${row * 70}px`;
-            </script>
-        </div>
-        <p id="number">
-            연산 횟수 : {{ num }}
-        </p>
+		<div id="col-hints">
+			<div class="empty_col"></div>
+			<div class="col_box">
+				{% for hint in col_hints %}
+				<p class="cols">{{ hint }}</p>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="myGrid">
+			<div id="row-hints">
+				{% for hint in row_hints %}
+				<div>{{ hint }}</div>
+				{% endfor %}
+			</div>
+			<table class="table">
+				{% for ans in answer %}
+				<tr>
+					{% for a in ans %} {% if a %}
+					<td class="myTd" style="background-color: white"></td>
+					{% else %}
+					<td class="myTd" style="background-color: black"></td>
+					{% endif %} {% endfor %}
+				</tr>
+				{% endfor %}
+			</table>
+			<script>
+				const table = document.querySelector(".table");
+				table.style.width = `${col * 70}px`;
+			</script>
+		</div>
+		<p id="number">연산 횟수 : {{ num }}</p>
 	</body>
 </html>
 
