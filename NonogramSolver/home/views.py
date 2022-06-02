@@ -8,9 +8,13 @@ def index(request):
     return render(request, 'index.html')
 
 def next(request):
-    row = request.GET['row']
-    col = request.GET['col']
-    return render(request, 'next.html', {'row': row, 'col': col})
+    try:
+        row = request.GET['row']
+        col = request.GET['col']
+        return render(request, 'next.html', {'row': row, 'col': col})      
+    except:
+        messages.info(request, '빈칸을 채워주세요.')
+        return render(request, 'index.html')
 
 def result(request, row, col):
     row_hints = []
