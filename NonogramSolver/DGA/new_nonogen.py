@@ -24,11 +24,11 @@ def main(rules, nLines, nColumns, nPoints, nPopulation = 500):
     solutions = line_solution(rules)
 
     mySol = DGA(constraints)
-    print("최종결과 밑에 나와여!!!!!!!!!!!!!!!!!!!!")
-    printSol(mySol, constraints)
+    #print("최종결과 밑에 나와여!!!!!!!!!!!!!!!!!!!!")
+    #printSol(mySol, constraints)
     #이거는 불리언 값 나열한거
     print(mySol.points)
-    return mySol.points
+    return mySol.points, iterations
     # print(checkSolution(Game(nLines, nColumns, mySol.points), rules))
     print("세대 수: ", iterations, " 인구 수: ", nPopulation)
     # printSol(mySol, constraints)
@@ -232,7 +232,6 @@ def best(P, constraints):
             return s
 
     return P[0]
-
 
 if __name__ == '__main__':
     main()

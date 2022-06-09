@@ -33,18 +33,19 @@ def result(request, row, col):
     rules=Rules(lines=row_hints, columns=col_hints)
     # print(rules)
 
-    answer = deque(main(rules, row, col,row*col, nPopulation = 500))
-
+    answer, iterations = main(rules, row, col,row*col, nPopulation = 500)
+    answer = deque(answer)
+    
     data=[]
-    for c in range(col):
+    for c in range(row):
         temp=[]
-        for r in range(row):
+        for r in range(col):
             temp.append(answer.popleft())
         data.append(temp)
     
     # print(data)
     if '' not in row_hints and '' not in col_hints:
-        iterations = 254
+        # iterations = 254
         return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints, 'num': iterations, 'answer': data})
     else:
         messages.info(request, '힌트를 채워주세요.')

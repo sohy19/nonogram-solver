@@ -24,6 +24,7 @@
 			</div>
 		</div>
 		<div class="myGrid">
+			<div></div>
 			<div id="row-hints">
 				{% for hint in row_hints %}
 				<div>{{ hint }}</div>
@@ -33,16 +34,28 @@
 				{% for ans in answer %}
 				<tr>
 					{% for a in ans %} {% if a %}
-					<td class="myTd" style="background-color: white"></td>
+					<td width="70px" class="myTd" style="background-color: black"></td>
 					{% else %}
-					<td class="myTd" style="background-color: black"></td>
+					<td width="70px" class="myTd" style="background-color: white"></td>
 					{% endif %} {% endfor %}
 				</tr>
 				{% endfor %}
 			</table>
 			<script>
+				const col = "{{col}}";
+				widths = col * 70;
 				const table = document.querySelector(".table");
-				table.style.width = `${col * 70}px`;
+				table.style.width = `${widths}px`;
+
+				const colBox = document.querySelector(".col_box");
+				colBox.style.width = `${widths}px`;
+
+				const myGrid = document.querySelector(".myGrid");
+
+				const gridWidth = widths / 100;
+				const spaceWidth = (widths + 100) / 200;
+
+				myGrid.style.gridTemplateColumns = `${gridWidth} 100px ${spaceWidth} ${gridWidth}`;
 			</script>
 		</div>
 		<p id="number">연산 횟수 : {{ num }}</p>
