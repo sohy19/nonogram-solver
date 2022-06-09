@@ -42,10 +42,8 @@ def result(request, row, col):
         for r in range(col):
             temp.append(answer.popleft())
         data.append(temp)
-    
-    # print(data)
+
     if '' not in row_hints and '' not in col_hints:
-        # iterations = 254
         return render(request, 'result.html', {'row': row, 'col': col, 'row_hints': row_hints, 'col_hints': col_hints, 'num': iterations, 'answer': data})
     else:
         messages.info(request, '힌트를 채워주세요.')

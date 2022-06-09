@@ -1,72 +1,69 @@
 #size {
-	color: white;
-	font-size: 30pt;
-	font-weight: bold;
-	text-align: center;
+  color: white;
+  font-size: 30pt;
+  font-weight: bold;
+  text-align: center;
 }
 
 .table {
-	width: calc(100%);
-	height: 100px;
-	background-color: white;
+  width: calc(100%);
+  height: 100px;
+  background-color: white;
 }
 
 tr {
-	width: 100%;
+  width: 100%;
 }
 
 .myTd {
-	height: 70px;
-	width: 70px;
+  height: 70px;
+  width: 70px;
 
-	border: 1px solid #000;
+  border: 1px solid #000;
 }
 
 .myGrid {
-	display: grid;
-	/* grid-template-columns: 30% 10% 30% 30%; */
-	justify-items: center;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  justify-items: center;
 }
 
 #col-hints {
-	display: grid;
-	grid-template-columns: 40% 30% 30%;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
 }
 
 .col_box {
-	display: flex;
-	justify-content: space-around;
-	margin: 0 auto;
-	align-items: flex-end;
-	color: white;
-	font-size: 15pt;
-	font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  align-items: flex-end;
+  color: white;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
 .cols {
-	width: 30px;
-	text-align: center;
+  width: 30px;
+  text-align: center;
 }
 
 #row-hints {
-	color: white;
-	font-size: 15pt;
-	font-weight: bold;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+  color: white;
+  font-size: 15pt;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: end;
+  margin-right: 50px;
 }
 
 #number {
-	color: white;
-	font-size: 15pt;
-	font-weight: bold;
-	text-align: center;
-}
-
-.row-hint {
-	width: 100px;
-	height: 70px;
+  color: white;
+  font-size: 15pt;
+  font-weight: bold;
+  text-align: center;
 }
 
 /*추가*/
