@@ -4,7 +4,7 @@
 ## 구현 내용 이미지
 |메인페이지|힌트 입력창|
 |:-:|:-:|
-|<img width="390" alt="스크린샷 2022-06-13 오전 11 09 57" src="https://user-images.githubusercontent.com/88651937/173270184-d8dfcaa8-0159-475d-ae49-87569fa214b6.png">|<img width="390" alt="스크린샷 2022-06-13 오전 11 11 08" src="https://user-images.githubusercontent.com/88651937/173270191-7c89535a-4bcf-4ac7-ab87-a94f24890f46.png">|
+|<img width="390" alt="스크린샷 2022-06-13 오후 6 00 52" src="https://user-images.githubusercontent.com/88651937/173318737-948ca32b-37be-490e-b4f8-61f062e1d920.png">|<img width="390" alt="스크린샷 2022-06-13 오전 11 11 08" src="https://user-images.githubusercontent.com/88651937/173270191-7c89535a-4bcf-4ac7-ab87-a94f24890f46.png">|
 |결과 예시 1|결과 예시 2|
 |<img width="390" alt="스크린샷 2022-06-13 오전 11 11 51" src="https://user-images.githubusercontent.com/88651937/173270202-4b5d6f48-844c-40d7-a92b-090a45ef9194.png">|<img width="390" alt="스크린샷 2022-06-13 오전 11 21 11" src="https://user-images.githubusercontent.com/88651937/173270208-896ecf35-f48c-4224-b2fa-9bfebc24afa7.png">|
 
