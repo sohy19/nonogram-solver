@@ -20,7 +20,7 @@ $ git clone https://github.com/sohy19/nonogram-solver.git
 #### 가상환경 생성하기 및 켜기
 ```
 $ cd nonogram-solver
-$ python3 -m venv myvenv
+$ python -m venv myvenv
 $ source myvenv/bin/activate      //Mac
 $ source myvenv/scripts/activate  // Windows
 ```
@@ -33,7 +33,7 @@ $ pip install -r requirements.txt
 ```
 $ touch .env
 ```
-  - 필요 환경변수
+  - 필요 환경변수 (.env 파일 내에 입력)
   ```bash
   SECRET_KEY=
   ```
